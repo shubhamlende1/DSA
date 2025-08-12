@@ -24,7 +24,32 @@ Input: nums = [0,0,0,0,0], goal = 0
 Output: 15
 
 * */
-/**/
+/*
+Explanation:
+
+To solve this problem efficiently, we need to use a clever approach.
+Instead of directly trying to find all subarrays whose sum is exactly equal to the goal, which can be difficult to manage with just a sliding window (especially when the array contains zeros), we'll use a different strategy.
+
+We'll count:
+
+The number of subarrays with a sum less than or equal to the goal.
+The number of subarrays with a sum less than or equal to (goal - 1).
+By subtracting the second count from the first, we'll get the number of subarrays whose sum is exactly equal to the goal.
+This trick allows us to avoid edge cases and works well with a sliding window approach.
+
+how will get it the sub-array count
+
+101
+10
+101
+01
+
+3 count
+
+we can get direct from length of window
+right-left + 1;
+
+* */
 
 public class BinarySubarraysWithSum {
     public static  int numSubarraysWithSum(int[] nums, int goal) {
