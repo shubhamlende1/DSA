@@ -39,13 +39,15 @@ public class LongestConsecutiveSequence {
         }
 
         for (int num : nums) {
-            int cnt = 1;
-            int temp = num;
-            while (set.contains(temp + 1)) {
-                temp++;
-                cnt++;
-            }
-            longest = Math.max(longest, cnt);
+           if(!set.contains(num-1)) {
+               int cnt = 1;
+               int temp = num;
+               while (set.contains(temp + 1)) {
+                   temp++;
+                   cnt++;
+               }
+               longest = Math.max(longest, cnt);
+           }
         }
 
         return  longest;
