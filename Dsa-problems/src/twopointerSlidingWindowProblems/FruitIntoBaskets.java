@@ -54,15 +54,15 @@ public class FruitIntoBaskets {
 
     public static int totalFruit(int[] fruits) {
         int left = 0, right = 0 , maxLength = 0;
-        Map<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> basket  = new HashMap<>();
         while (right < fruits.length) {
-            map.put(fruits[right], map.getOrDefault(fruits[right], 0) + 1);
-            if(map.size() > 2) {
-                int count = map.getOrDefault(fruits[left], 0) - 1;
+            basket.put(fruits[right], basket.getOrDefault(fruits[right], 0) + 1);
+            if(basket.size() > 2) {
+                int count = basket.getOrDefault(fruits[left], 0) - 1;
                 if(count == 0) {
-                    map.remove(fruits[left]);
+                    basket.remove(fruits[left]);
                 } else {
-                    map.put(fruits[left], count);
+                    basket.put(fruits[left], count);
                 }
                  left++;
             }

@@ -32,13 +32,13 @@ public class MaximumSubarray {
         int sum = 0;
         int max = Integer.MIN_VALUE;
 
-        for(int i = 0 ; i< nums.length ; i++){
-            sum += nums[i];
+        for (int num : nums) {
+            sum += num;
 
-            if(sum > max){
+            if (sum > max) {
                 max = sum;
             }
-            if(sum < 0) {
+            if (sum < 0) {
                 sum = 0;
             }
         }
