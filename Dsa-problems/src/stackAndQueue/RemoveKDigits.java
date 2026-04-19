@@ -32,6 +32,6 @@ public class RemoveKDigits {
     }
 
     public static void main(String[] args) {
-        System.out.println(removeKDigits("1234567",3));
+        System.out.println(removeKDigits("1432219",3));
     }
 }

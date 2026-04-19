@@ -50,6 +50,7 @@ public class MinimumNumberOfRefuelingStops {
         int stationIndex= 0;
         int visitedStations = 0;
         while(fuel < target) {
+            System.out.println(fuel);
 
             // checks fuel required
             while (stationIndex < stations.length && stations[stationIndex][0] <= fuel) {
@@ -61,6 +62,7 @@ public class MinimumNumberOfRefuelingStops {
                 return -1;
 
             fuel += pq.poll();
+
             visitedStations++;
         }
         System.out.println(fuel);
@@ -68,6 +70,6 @@ public class MinimumNumberOfRefuelingStops {
     }
 
     public static void main(String[] args) {
-        System.out.println(minRefuelStops(100, 90, new int[][]{{10,60},{20,30},{30,30},{60,40}}));
+        System.out.println(minRefuelStops(100, 10, new int[][]{{10,60},{20,30},{30,30},{60,40}}));
     }
 }

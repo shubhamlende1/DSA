@@ -2,6 +2,7 @@ package heap;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 class Interval{
@@ -26,8 +27,9 @@ public class EmployeeFreeTime {
             allEmps.addAll(st);
         }
 
-        allEmps.sort((a,b)->a.start - b.start);
+        allEmps.sort(Comparator.comparingInt(a -> a.start));
 
+        System.out.println(allEmps);
         int prevEnd = allEmps.get(0).end;
         List<Interval> free = new ArrayList<>();
         for (int i = 1; i < allEmps.size(); i++){

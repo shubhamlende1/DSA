@@ -11,6 +11,7 @@ public class MinimumCostToConnectSticks {
         for(int stick: sticks) {
             pq.offer(stick);
         }
+        System.out.println(pq);
         while(!pq.isEmpty() && pq.size()>1) {
             int x = pq.poll();
             int  y =  pq.poll();

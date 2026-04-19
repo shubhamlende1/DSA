@@ -54,7 +54,7 @@ public class MaximumPointsYouCanObtainFromCards {
         maxSum = leftSum+rightSum;
         int rightIndex = cardPoints.length - 1;
         for(int i = k - 1 ; i >= 0 ; i--) {
-            leftSum-=cardPoints[i];
+             leftSum-=cardPoints[i];
             rightSum+=cardPoints[rightIndex];
             rightIndex--;
             maxSum = Math.max(maxSum,leftSum+rightSum);
