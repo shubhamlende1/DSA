@@ -1,5 +1,6 @@
 package twopointerSlidingWindowProblems;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,22 +33,10 @@ public class SubarraysWithKDifferentIntegers {
 
     public static int subarraysWithKDistinct(int[] nums, int k) {
         int countArray = 0;
-//        for (int i = 0; i < nums.length; i++) {
-//            Map<Integer, Integer> map = new HashMap<>();
-//            for (int j = i; j < nums.length; j++) {
-//                map.put(nums[j], map.getOrDefault(nums[j], 0) + 1);
-//
-//                if(map.size() == k){
-//                    count ++;
-//                }
-//                if(map.size() > k){
-//                    break;
-//                }
-//            }
-//        }
 
         int left =0; int right = 0;
         Map<Integer, Integer> map = new HashMap<>();
+
         while (right < nums.length){
             map.put(nums[right], map.getOrDefault(nums[right],0)+1);
             while(map.size() >k ){
@@ -63,6 +52,7 @@ public class SubarraysWithKDifferentIntegers {
         right++;
         }
         return countArray;
+
     }
 
     public static void main(String[] args) {

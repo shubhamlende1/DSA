@@ -50,18 +50,12 @@ public class TrappingRainWater {
         while (left < right) {
 
             if(height[left] <= height[right]) {
-                if(leftMax > height[left]) {
-                    count+= leftMax - height[left];
-                } else {
-                    leftMax = height[left];
-                }
+                leftMax = Math.max(height[left],leftMax);
+                count+= leftMax - height[left];
                 left++;
             } else {
-                if(rightMax > height[right]) {
+                    rightMax = Math.max(height[right],rightMax);
                     count+=rightMax - height[right];
-                } else {
-                    rightMax = height[right];
-                }
                 right--;
             }
         }

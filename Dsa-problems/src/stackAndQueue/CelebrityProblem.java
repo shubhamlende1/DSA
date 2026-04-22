@@ -71,7 +71,7 @@ public class CelebrityProblem {
             else if (matrix[down][top] == 1) {
                 down--;
             } else {
-                top--;
+                top++;
                 down--;
             }
         }
