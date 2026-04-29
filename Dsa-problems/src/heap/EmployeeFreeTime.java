@@ -1,9 +1,6 @@
 package heap;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 class Interval{
     int start;
@@ -21,15 +18,8 @@ class Interval{
 }
 public class EmployeeFreeTime {
     public static List<Interval> employeeFreeTime(List<List<Interval>> schedule) {
-        List<Interval> allEmps = new ArrayList<>();
+        List<Interval> allEmps = schedule.stream().flatMap(Collection::stream).sorted(Comparator.comparingInt(a -> a.start)).toList();
 
-        for(List<Interval> st : schedule){
-            allEmps.addAll(st);
-        }
-
-        allEmps.sort(Comparator.comparingInt(a -> a.start));
-
-        System.out.println(allEmps);
         int prevEnd = allEmps.get(0).end;
         List<Interval> free = new ArrayList<>();
         for (int i = 1; i < allEmps.size(); i++){
